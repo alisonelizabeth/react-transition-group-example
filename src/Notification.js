@@ -2,29 +2,32 @@ import React from 'react';
 import { ToastNotification } from 'carbon-components-react';
 import Transition from 'react-transition-group/Transition';
 
-const duration = 500;
+const duration = 300;
 
 const defaultStyle = {
     position: 'fixed',
     top: '0',
+    right: '-270px',
     zIndex: '1000'
 };
 
-// TODO add transition styles
 const transitionStyles = {
-    entering: {
-    },
     entered: {
+        transform: 'translateX(-100%)',
+        transition: `transform ${duration}ms ease-in-out`
     },
     exiting: {
+        transform: 'translateX(100%)',
+        transition: `transform ${duration}ms ease-in-out`
     },
     exited: {
+        right: '-270px'
     }
 };
 
-const Notification = ({ notification, closeNotification }) => {
+const Notification = ({ notification }) => {
     return (
-        <Transition in={notification} timeout={duration} unmountOnExit>
+        <Transition in={notification} timeout={duration} unmountOnExit mountOnEnter>
             {(state) => (
                 <div style={{
                     ...defaultStyle,
@@ -34,7 +37,7 @@ const Notification = ({ notification, closeNotification }) => {
                         title={'Success!'}
                         kind={'success'}
                         subtitle={'You clicked me.'}
-                        onCloseButtonClick={() => closeNotification()}
+                        hideCloseButton
                         caption={new Date().toString()}
                     />
                 </div>

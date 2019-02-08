@@ -14,17 +14,14 @@ class App extends Component {
   showNotification() {
     this.setState(
       { notification: true },
-      () => setTimeout(() => this.closeNotification(), 5000)
+      () => setTimeout(() => this.setState({ notification: false }), 5000)
     );
-  }
-  closeNotification() {
-    this.setState({ notification: false });
   }
   render() {
     const { notification } = this.state;
     return (
       <div className='app'>
-        <Notification notification={notification} closeNotification={this.closeNotification.bind(this)} />
+        <Notification notification={notification} />
         <div className='app-content'>
           <h1>React Transitions Group Example</h1>
           <Button onClick={() => this.showNotification()}>
