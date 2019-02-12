@@ -13,7 +13,7 @@ class App extends Component {
   showNotification() {
     this.setState(
       { notification: true },
-      () => setTimeout(() => this.setState({ notification: false }), 15000)
+      () => setTimeout(() => this.setState({ notification: false }), 5000)
     );
   }
   render() {
