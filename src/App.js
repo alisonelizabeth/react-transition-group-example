@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import 'carbon-components/scss/globals/scss/styles.scss';
 import { Button } from 'carbon-components-react';
 import Notification from './Notification';
-import './app.css';
+import './App.css';
 
 class App extends Component {
   constructor(props) {
@@ -23,7 +23,7 @@ class App extends Component {
       <div className='app'>
         <Notification notification={notification} />
         <div className='app-content'>
-          <h1>React Transitions Group Example</h1>
+          <h1>React Transition Group Example</h1>
           <Button onClick={() => this.showNotification()}>
             Trigger alert
           </Button>

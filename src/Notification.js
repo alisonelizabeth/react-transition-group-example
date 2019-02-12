@@ -27,7 +27,7 @@ const transitionStyles = {
 
 const Notification = ({ notification }) => {
     return (
-        <Transition in={notification} timeout={duration} unmountOnExit mountOnEnter>
+        <Transition in={notification} timeout={duration} unmountOnExit>
             {(state) => (
                 <div style={{
                     ...defaultStyle,
