@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import 'carbon-components/scss/globals/scss/styles.scss';
 import { Button } from 'carbon-components-react';
 import Notification from './Notification';
 import './App.css';
@@ -14,7 +13,7 @@ class App extends Component {
   showNotification() {
     this.setState(
       { notification: true },
-      () => setTimeout(() => this.setState({ notification: false }), 5000)
+      () => setTimeout(() => this.setState({ notification: false }), 15000)
     );
   }
   render() {
